@@ -1,0 +1,55 @@
+
+body {
+  background: #D3D3FF;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+.column-left {
+  float: left;
+  width: 25%;
+}
+.column-right {
+  float: left;
+  width: 75%;
+}
+
+.profile {
+  padding: 0 20px 20px;
+}
+.profile .stat label {
+  font-weight: bold;
+}
+
+#show-comments {
+  background: #ECECFF;
+  padding: 1px 20px;
+}
+#show-comments .comment {
+}
+#show-comments .comment + .comment {
+  border-top: 1px dashed #aaa;
+}
+
+.new-comment {
+  background: #FFF7D3;
+  padding: 1px 20px 20px;
+}
+.new-comment textarea {
+  width: 100%;
+}
+
+#templates { display: none; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}

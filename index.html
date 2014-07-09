@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>Backbone Starter</title>
+  <link rel="stylesheet" type="text/css" href="src/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="column-left clearfix">
+
+    <div class="profile">
+      <h1>Bob Doe's Profile</h1>
+      <div class="stat">
+        <label>Favorite Food:</label><br />
+        Butter Lettuce<br />
+        <br />
+        <label>Favorite Activity:</label><br />
+        Butter Lettuce Party
+      </div>
+    </div>
+
+    <div class="new-comment">
+      <h3>New Comment</h3>
+
+      <label>Username:</label><br />
+      <input name="username" type="text" /><br />
+
+      <label>Message:</label><br />
+      <textarea name="message" rows="6"></textarea><br />
+
+      <button>Create Comment</button>
+    </div>
+
+  </div>
+
+  <div class="column-right clearfix">
+    <div id="show-comments">
+      <h2>Comments</h2>
+      <div class="content"></div>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="templates">
+  <script class="comment" type="text/template">
+    <div class="comment">
+      <div class="avatar"></div>
+      <h5>{{ username }}</h5>
+      <p>{{ message }}</p>
+    </div>
+  </script>
+</div>
+
+
+<!-- 3rd-party scripts -->
+<script src="vendor/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="vendor/underscore.js" type="text/javascript"></script>
+<script src="vendor/backbone.js" type="text/javascript"></script>
+<script type="text/javascript">
+  // Change underscore template interprolation
+  // syntax from <%= %> to {{ }}
+  _.templateSettings = {
+    interpolate: /\{\{(.+?)\}\}/g
+  };
+</script>
+<!-- Your Stuff -->
+<script src="src/main.js" type="text/javascript"></script>
+
+</body>
+</html>
