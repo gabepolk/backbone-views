@@ -11,7 +11,7 @@ var ShowCommentsView = Backbone.View.extend({
     // For each comment, generate html and add it to the page
     for (var i = 0; i < this.comments.length; i += 1) {
       var newCommentHtml = commentTemplate( this.comments[i] );
-      $('#show-comments .content').append(newCommentHtml);
+      $(this.el).append(newCommentHtml);
     }
 
     return this;
@@ -25,7 +25,8 @@ var initialComments = [
 ];
 
 var commentsView = new ShowCommentsView({
-  comments: initialComments
+  comments: initialComments,
+  el: $('#show-comments .content')
 });
 
 // Since the comment template never changes, we can keep this global
@@ -36,7 +37,7 @@ $('.new-comment button').on('click', function (e) {
   var newUsername = $('.new-comment [name=username]').val();
   var newMessage = $('.new-comment [name=message]').val();
   // Add new comment to our comments array
-  comments.push({
+  commentsView.comments.push({
     username: newUsername,
     message: newMessage
   });
